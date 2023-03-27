@@ -23,7 +23,7 @@ if ($city != null) {
     }
     curl_close($curl1);
 
-    $curl2 = curl_init("https://api.openweathermap.org/data/2.5/weather?lat={$lat}&lon={$lon}&appid={$APIkey}");
+    $curl2 = curl_init("https://api.openweathermap.org/data/2.5/weather?lat={$lat}&lon={$lon}&appid={$APIkey}&units=metric");
     curl_setopt_array($curl2, [
         CURLOPT_CAINFO => __DIR__ . DIRECTORY_SEPARATOR . 'cert.cer',
         CURLOPT_RETURNTRANSFER => true
@@ -33,7 +33,7 @@ if ($city != null) {
         var_dump(curl_error($curl2));
     } else {
         $data2 = json_decode($data2, true);
-        var_dump($data2['main']['temp']);
+        echo 'il fait actuellement ' . round(($data2['main']['temp'])) . ' °C.';
     }
     curl_close($curl2);
 }

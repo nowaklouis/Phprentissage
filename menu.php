@@ -24,3 +24,4 @@ HTML;
 <?= navlogic('/hot.php', 'Hot'); ?>
 <?= navlogic('/goldbook.php', 'Livre d\'or'); ?>
 <?= navlogic('/curl.php', 'Meteo'); ?>
+<?= navlogic('/blog/index.php', 'Blog'); ?>
